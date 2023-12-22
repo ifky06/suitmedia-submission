@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* Set the height to 3 times the line height (adjust as needed) */
+  max-height: calc(1.6em * 3);
+  line-height: 1.2em;
+  /* Ensure proper text rendering when using ellipsis */
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+}
+
+
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: #0a0c21;
+}
