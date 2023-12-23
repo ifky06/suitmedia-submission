@@ -7,7 +7,10 @@ export default class Content {
     }
 
     static fromJson(json) {
-        return new Content(json['id'] ,json['title'], json['published_at'], json['medium_image'][0]['url']);
+        return new Content(json['id'] ,json['title'], json['published_at'],
+            // if data is null, return empty string
+            json['medium_image'][0] ? json['medium_image'][0]['url'] : '',
+            );
     }
 
     static async getContents(pageNumber, pageSize, sortBy) {
